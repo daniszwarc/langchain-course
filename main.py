@@ -22,7 +22,8 @@ agent = create_react_agent(
 agent_executor = AgentExecutor(
     agent=agent,
     tools=tools,
-    verbose=True
+    verbose=True,
+    handle_parsing_errors=True
 )
 chain = agent_executor
 
@@ -30,7 +31,7 @@ chain = agent_executor
 def main():
     result = chain.invoke(
         input={
-            "input": "Search for 3 jobs postings for an ai engineer using Langchain in the Montreal area on LinkedIn and list their details"
+            "input": "Search for 3 jobs postings for GenAI with Langchain in the Montreal area on LinkedIn and list their details"
         }
     )
     print(result)
