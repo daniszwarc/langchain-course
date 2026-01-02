@@ -10,7 +10,7 @@ from langchain_tavily import TavilySearch
 
 
 tools = [TavilySearch()]
-llm = ChatOpenAI(model="gpt-4")
+llm = ChatOpenAI(model="gpt-4o")
 react_prompt = hub.pull("hwchase17/react")
 agent = create_react_agent(
     llm=llm,
